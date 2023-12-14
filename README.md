@@ -19,7 +19,7 @@ Import as normal and check documentation for full details, example below
 
 ```Python
 from VRP import VRP
-help(VRP)              #for documentation
+
 tsp = VRP(100)         #one vehicle (TSP) with 100 nodes randomly positioned in a square
 vrp = VRP(100,5)       #100 nodes, max 5 vehicles
 cvrp = VRP(100,5,capacities=[50]*5, demands=[2]*100)  #capacitated VRP with homogeneous demands and capacities
@@ -33,3 +33,7 @@ print(solution.ObjectiveValue())
 cvrp.render(solution)
 cvrp.show()
 ``` 
+Documentation is available via pydoc e.g.
+```Bash
+python -m pydoc VRP
+```
