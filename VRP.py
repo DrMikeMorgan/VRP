@@ -34,7 +34,7 @@ class VRP:
 		self.G = nx.random_geometric_graph(n,0,pos=self.pos)
 		euclid_distance = [ [ ((self.pos[i][0]-self.pos[j][0])**2 + (self.pos[i][1]-self.pos[j][1])**2) ** 0.5 for j in range(n)] for i in range(n) ]
 		manhattan_distance = [ [ abs(self.pos[i][0]-self.pos[j][0]) + abs(self.pos[i][1]-self.pos[j][1]) for j in range(n)] for i in range(n) ]
-		self.d = [ [ manhattan*manhattan_distance[i][j] + (1.0-manhattan)*euclid_distance[i][j] for j in range(n)] for i in range(n) ]
+		self.d = [ [ int(manhattan*manhattan_distance[i][j] + (1.0-manhattan)*euclid_distance[i][j]) for j in range(n)] for i in range(n) ]
 		self.manager = pywrapcp.RoutingIndexManager(n,v,0)
 		self.routing = pywrapcp.RoutingModel(self.manager)
 		def distance_callback(from_index, to_index):
