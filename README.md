@@ -25,8 +25,8 @@ vrp = VRP(100,5)       #100 nodes, max 5 vehicles
 cvrp = VRP(100,5,capacities=[50]*5, demands=[2]*100)  #capacitated VRP with homogeneous demands and capacities
 #Further options for e.g. time windows available, see docs
 
-#run guided local search on the problem for 60 seconds, also options for tabu search and simulated annealing
-solution = cvrp.guidedLocalSearch(60)
+#run guided local search on the problem for 10 seconds, also options for tabu search and simulated annealing
+solution = cvrp.guidedLocalSearch(10)
 
 #display solution
 print(solution.ObjectiveValue())
