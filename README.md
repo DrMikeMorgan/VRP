@@ -29,7 +29,7 @@ cvrp = VRP(100,5,capacities=[50]*5, demands=[2]*100)  #capacitated VRP with homo
 solution = cvrp.guidedLocalSearch(60)
 
 #display solution
-print(solution.ObjectiveValue()
+print(solution.ObjectiveValue())
 cvrp.render(solution)
 cvrp.show()
 ``` 
